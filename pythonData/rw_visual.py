@@ -7,7 +7,7 @@ from random_walk import RandomWalk
 # 只要程序处于活动状态 就不断的模拟随机漫步
 while True:
     # 创建一个RandomWalk实例 并将其所有的点都绘制出来
-    rw = RandomWalk(80000)
+    rw = RandomWalk()
     rw.fill_walk()
     
     # 设置绘图窗口的尺寸
@@ -15,8 +15,7 @@ while True:
     
     point_number = list(range(rw.num_points))
     
-    plt.scatter(rw.x_values, rw.y_values, c=point_number, cmap=plt.cm.Blues,
-        s=1)
+    plt.plot(rw.x_values, rw.y_values, linewidth=5)
     
     # 突出起点和终点
     plt.scatter(0, 0, c='green', s=100)
